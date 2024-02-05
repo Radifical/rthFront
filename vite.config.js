@@ -7,5 +7,10 @@ export default defineConfig({
 
   build: {
     chunkSizeWarningLimit: 1100, // Adjust the limit as needed (in kB)
+
+     resolve: {
+    alias: {
+      'jspdf',
+    },
   },
 })
