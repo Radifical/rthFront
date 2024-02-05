@@ -18,7 +18,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://rthbackend.onrender.com/admin/login', credentials);
+      const response = await axios.post('http://localhost:5555/admin/login', credentials);
       console.log(response.data);
       login(response.data.token); // Call the login function with the token
       navigate('/'); // Navigate to the home page upon successful login

@@ -9,7 +9,7 @@ const EditStudent = () => {
 
   const update = async () => {
     try {
-      await axios.put(`https://rthbackend.onrender.com/users/${id}`, updateStudent);
+      await axios.put(`http://localhost:5555/users/${id}`, updateStudent);
       setText('Student has been updated');
     } catch (error) {
       setText('Error updating student. Please try again.');

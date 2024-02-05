@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import jsPDF from 'jspdf';
+import { jsPDF } from 'jspdf';
 import axios from 'axios';
 
 const Attendance = () => {
@@ -16,7 +16,7 @@ const Attendance = () => {
   const fetchStudents = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('https://rthbackend.onrender.com/users');
+      const response = await axios.get('http://localhost:5555/users');
       setStudents(response.data.data);
     } catch (error) {
       console.error('Error fetching students:', error);
@@ -41,7 +41,7 @@ const Attendance = () => {
   
         try {
           // Send the update to the server
-          await axios.put(`https://rthbackend.onrender.com/users/${studentId}`, { ...updatedStudents[studentIndex], classesLeft });
+          await axios.put(`http://localhost:5555/users/${studentId}`, { ...updatedStudents[studentIndex], classesLeft });
           setStudents(updatedStudents); // Update the state with the new students array
         } catch (error) {
           console.error('Error updating student:', error);

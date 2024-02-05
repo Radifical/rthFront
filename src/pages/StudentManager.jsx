@@ -13,7 +13,7 @@ const StudentManager = () => {
 
   const loadStudents = async () => {
     try {
-      const response = await axios.get('https://rthbackend.onrender.com/users');
+      const response = await axios.get('http://localhost:5555/users');
       setStudents(response.data.data);
     } catch (error) {
       console.error('Error fetching students:', error);
@@ -22,7 +22,7 @@ const StudentManager = () => {
 
   const addStudent = async () => {
     try {
-      await axios.post('https://rthbackend.onrender.com/users', newStudent);
+      await axios.post('http://localhost:5555/users', newStudent);
       setNewStudent({ studentName: '', phoneNumber: '', classesLeft: 0 });
       loadStudents();
     } catch (error) {
@@ -32,7 +32,7 @@ const StudentManager = () => {
 
   const deleteStudent = async (studentId) => {
     try {
-      await axios.delete('https://rthbackend.onrender.com/users/'+studentId);
+      await axios.delete('http://localhost:5555/users/'+studentId);
       loadStudents();
     }catch(error){
       console.log("Error deleting ", error);

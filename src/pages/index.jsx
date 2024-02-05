@@ -12,7 +12,7 @@ const Home = () => {
   
   const loadStudents = async () => {
     try {
-      const response = await axios.get('https://rthbackend.onrender.com/users');
+      const response = await axios.get('http://localhost:5555/users');
       setStudents(response.data.data);
     } catch (error) {
       console.error('Error fetching students:', error);
