@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import jsPDF from 'jspdf';
+import jsPDF from 'jspdf/dist/jspdf.umd.js'
 import axios from 'axios';
 
 const Attendance = () => {
